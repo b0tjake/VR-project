@@ -15,11 +15,19 @@ public class ForkliftPath : MonoBehaviour
     public Transform[] wheels;
     public float wheelRadius = 0.35f;
 
+    [Header("Safety")]
+    public AudioSource horn;
+
     private int currentPoint = 0;
+    private bool canMove = true;
 
     void Update()
     {
-        if (points.Length == 0) return;
+        if (!canMove)
+            return;
+
+        if (points.Length == 0)
+            return;
 
         Transform target = points[currentPoint];
 
@@ -39,20 +47,25 @@ public class ForkliftPath : MonoBehaviour
                 if (loop)
                     currentPoint = 0;
                 else
+                {
                     enabled = false;
+                    return;
+                }
             }
 
-            return;
+            target = points[currentPoint];
+            direction = target.position - transform.position;
+            direction.y = 0;
         }
 
-        // Rotate smoothly
+        // Rotate
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.RotateTowards(
             transform.rotation,
             targetRotation,
             turnSpeed * Time.deltaTime);
 
-        // Move only when mostly facing the waypoint
+        // Move only when facing waypoint
         float angle = Vector3.Angle(transform.forward, direction);
 
         if (angle < 45f)
@@ -61,8 +74,8 @@ public class ForkliftPath : MonoBehaviour
 
             // Rotate wheels
             float wheelRotation =
-                (moveSpeed / (2f * Mathf.PI * wheelRadius)) *
-                360f * Time.deltaTime;
+                (moveSpeed / (2f * Mathf.PI * wheelRadius))
+                * 360f * Time.deltaTime;
 
             foreach (Transform wheel in wheels)
             {
@@ -70,5 +83,21 @@ public class ForkliftPath : MonoBehaviour
                     wheel.Rotate(Vector3.right, wheelRotation, Space.Self);
             }
         }
+    }
+
+    public void StopForklift()
+    {
+        canMove = false;
+
+        if (horn != null && !horn.isPlaying)
+            horn.Play();
+    }
+
+    public void ContinueForklift()
+    {
+        canMove = true;
+
+        if (horn != null && horn.isPlaying)
+            horn.Stop();
     }
 }

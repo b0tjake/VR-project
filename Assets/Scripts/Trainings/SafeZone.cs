@@ -5,32 +5,41 @@ public class SafeZone : MonoBehaviour
     public AudioSource warningSound;
     public TrainingManager trainingManager;
 
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("MainCamera"))
-        {
-            if (!warningSound.isPlaying)
-            trainingManager.LeftSafeZone();
-                warningSound.Play();
-
-            Debug.Log("EXIT : " + other.name);
-
-        }
-        Debug.Log("EXIT 2: " + other.name);
-
-    }
+    private static int safeZoneCount = 0;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("MainCamera"))
-        {
-            warningSound.Stop();
-            trainingManager.EnteredSafeZone();
-             Debug.Log("ENTER : " + other.name);
-             
-        }
-        Debug.Log("ENTER : 2" + other.name);
+        if (!other.CompareTag("MainCamera"))
+            return;
 
+        safeZoneCount++;
+
+        warningSound.Stop();
+        trainingManager.EnteredSafeZone();
+
+        Debug.Log("ENTER : " + other.name +
+                  " | Zones = " + safeZoneCount);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("MainCamera"))
+            return;
+
+        safeZoneCount--;
+
+        if (safeZoneCount < 0)
+            safeZoneCount = 0;
+
+        if (safeZoneCount == 0)
+        {
+            if (!warningSound.isPlaying)
+                warningSound.Play();
+
+            trainingManager.LeftSafeZone();
+        }
+
+        Debug.Log("EXIT : " + other.name +
+                  " | Zones = " + safeZoneCount);
     }
 }
