@@ -8,6 +8,9 @@ public class TrainingManager : MonoBehaviour
 
     bool outside = false;
     Coroutine restartRoutine;
+    public GameObject completedPanel;
+    public GameObject diactivateWhenWin;
+
 
     public void LeftSafeZone()
     {
@@ -52,5 +55,12 @@ public class TrainingManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void TrainingCompleted()
+    {
+        completedPanel.SetActive(true);
+
+        Debug.Log("YOU WIN!");
+        diactivateWhenWin.SetActive(false);
     }
 }
