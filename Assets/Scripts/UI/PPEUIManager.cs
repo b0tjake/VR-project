@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class PPEUIManager : MonoBehaviour
 {
@@ -23,48 +24,48 @@ public class PPEUIManager : MonoBehaviour
     public GameObject weldingMaskUnchecked;
     public GameObject weldingMaskChecked;
 
+    void ShowChecked(GameObject uncheckedObj, GameObject checkedObj)
+    {
+        uncheckedObj.SetActive(false);
+        checkedObj.SetActive(true);
 
+        checkedObj.transform.localScale = Vector3.zero;
+        checkedObj.transform.DOScale(Vector3.one, 0.25f)
+            .SetEase(Ease.OutBack);
+    }
 
     public void EquipHelmet()
     {
-        Debug.Log("Helmet UI Updated!");
-        helmetUnchecked.SetActive(false);
-        helmetChecked.SetActive(true);
+        ShowChecked(helmetUnchecked, helmetChecked);
     }
 
     public void EquipVest()
     {
-        vestUnchecked.SetActive(false);
-        vestChecked.SetActive(true);
+        ShowChecked(vestUnchecked, vestChecked);
     }
 
     public void EquipLeftShoe()
     {
-        leftShoeUnchecked.SetActive(false);
-        leftShoeChecked.SetActive(true);
+        ShowChecked(leftShoeUnchecked, leftShoeChecked);
     }
 
     public void EquipRightShoe()
     {
-        rightShoeUnchecked.SetActive(false);
-        rightShoeChecked.SetActive(true);
+        ShowChecked(rightShoeUnchecked, rightShoeChecked);
     }
 
     public void EquipLeftGlove()
     {
-        leftGloveUnchecked.SetActive(false);
-        leftGloveChecked.SetActive(true);
+        ShowChecked(leftGloveUnchecked, leftGloveChecked);
     }
 
     public void EquipRightGlove()
     {
-        rightGloveUnchecked.SetActive(false);
-        rightGloveChecked.SetActive(true);
+        ShowChecked(rightGloveUnchecked, rightGloveChecked);
     }
 
     public void EquipWeldingMask()
     {
-        weldingMaskUnchecked.SetActive(false);
-        weldingMaskChecked.SetActive(true);
+        ShowChecked(weldingMaskUnchecked, weldingMaskChecked);
     }
 }

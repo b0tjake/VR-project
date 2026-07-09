@@ -15,7 +15,7 @@ public class SceneController : MonoBehaviour
 
     public void LoadPPESelection()
     {
-        SceneManager.LoadScene("    ");
+        SceneManager.LoadScene("PPESelection");
     }
 
     public void LoadWasteManagement()

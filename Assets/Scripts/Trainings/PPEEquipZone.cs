@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class PPEEquipZone : MonoBehaviour
 {
-    // Drag your PPEUIManager into this field in the Unity Inspector
-    public PPEUIManager uiManager; 
+    public PPEUIManager uiManager;
+
+    public TrainingManager trainingManager;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -68,11 +69,16 @@ public class PPEEquipZone : MonoBehaviour
 
         Debug.Log(item.ppeType + " Equipped");
 
+        SFXManager.Instance.PlayEquip();
+
         other.gameObject.SetActive(false);
 
         if (PPEManager.Instance.IsFullyEquipped())
         {
             Debug.Log("All PPE Equipped!");
+
+            if (trainingManager != null)
+                trainingManager.TrainingCompleted();
         }
     }
 }

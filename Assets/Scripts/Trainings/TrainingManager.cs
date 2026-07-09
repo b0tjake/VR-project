@@ -12,6 +12,8 @@ public class TrainingManager : MonoBehaviour
     public GameObject diactivateWhenWin;
 
 
+
+
     public void LeftSafeZone()
     {
         if (outside) return;
@@ -58,9 +60,12 @@ public class TrainingManager : MonoBehaviour
     }
     public void TrainingCompleted()
     {
-        completedPanel.SetActive(true);
+        Debug.Log("TRAINING COMPLETED!");
 
-        Debug.Log("YOU WIN!");
-        diactivateWhenWin.SetActive(false);
+        if (diactivateWhenWin != null)
+            diactivateWhenWin.SetActive(false);
+
+        if (completedPanel != null)
+            completedPanel.SetActive(true);
     }
 }
