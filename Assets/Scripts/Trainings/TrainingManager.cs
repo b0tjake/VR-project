@@ -4,15 +4,23 @@ using System.Collections;
 
 public class TrainingManager : MonoBehaviour
 {
+    [Header("Scene 1")]
     public TrainingUIManager ui;
 
     bool outside = false;
     Coroutine restartRoutine;
+
+    [Header("Final Completion")]
     public GameObject completedPanel;
     public GameObject diactivateWhenWin;
 
+    [Header("Scene 2 - PPE")]
+    public TaskCanvasManager taskCanvas;
+    public GameObject weldingArea;
 
-
+    //======================================================
+    // SAFE WALKWAY
+    //======================================================
 
     public void LeftSafeZone()
     {
@@ -50,14 +58,31 @@ public class TrainingManager : MonoBehaviour
 
         ui.HideWarning();
 
-        ui.ShowRestart(
-            "Restarting..."
-        );
+        ui.ShowRestart("Restarting...");
 
         yield return new WaitForSeconds(0.5f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    //======================================================
+    // PPE FINISHED
+    //======================================================
+
+public void PPECompleted()
+{
+    Debug.Log("PPE Completed!");
+
+    taskCanvas.PPEFinished();
+
+    if (weldingArea != null)
+        weldingArea.SetActive(true);
+}
+
+    //======================================================
+    // TRAINING FINISHED
+    //======================================================
+
     public void TrainingCompleted()
     {
         Debug.Log("TRAINING COMPLETED!");

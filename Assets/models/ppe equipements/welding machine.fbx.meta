@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: base
-    second: {fileID: 2100000, guid: ae8a9b9c10de76f42b4cc8ed4c7b5539, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: 0233b7373ab8b6d4396d4b18ee8de327, type: 2}
   - first:
-      type: UnityEngine:Material
+      type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: other
-    second: {fileID: 2100000, guid: 1f88ac764abe68b4886b215886404ebb, type: 2}
+      name: Welding_Box
+    second: {fileID: 2800000, guid: 9599252f63c437146b03bcf3bc1b38ae, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

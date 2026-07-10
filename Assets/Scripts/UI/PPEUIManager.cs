@@ -30,6 +30,12 @@ public class PPEUIManager : MonoBehaviour
         checkedObj.SetActive(true);
 
         checkedObj.transform.localScale = Vector3.zero;
+        Sequence sequence = DOTween.Sequence();
+        
+        sequence.Append(checkedObj.transform.DOScale(1f, 0.15f).SetEase(Ease.OutBack));
+        checkedObj.transform.DOScale(0.5f, 0.1f).SetEase(Ease.InOutSine);
+
+
         checkedObj.transform.DOScale(Vector3.one, 0.25f)
             .SetEase(Ease.OutBack);
     }

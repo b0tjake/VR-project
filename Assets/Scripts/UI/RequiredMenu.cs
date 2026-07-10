@@ -6,6 +6,8 @@ public class RequiredMenu : MonoBehaviour
     [Header("References")]
     public Transform head;
     public GameObject currentCanvas;
+    public TaskCanvasManager taskCanvas;
+
 
     [Header("Menu")]
     public float distance = 1.5f;
@@ -33,15 +35,18 @@ public class RequiredMenu : MonoBehaviour
         }
     }
 
-    void ToggleMenu()
+    public void ToggleMenu()
     {
-        if (currentCanvas == null)
-            return;
-
         if (isOpen)
+        {
             CloseCanvas();
+        }
         else
+        {
             OpenCanvas();
+
+            taskCanvas.ToggleCurrentTask();
+        }
     }
 
     public void OpenCanvas()

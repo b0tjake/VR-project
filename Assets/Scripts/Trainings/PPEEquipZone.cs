@@ -4,6 +4,7 @@ public class PPEEquipZone : MonoBehaviour
 {
     public PPEUIManager uiManager;
 
+
     public TrainingManager trainingManager;
 
     private void OnTriggerEnter(Collider other)
@@ -67,18 +68,17 @@ public class PPEEquipZone : MonoBehaviour
                 break;
         }
 
-        Debug.Log(item.ppeType + " Equipped");
+Debug.Log(item.ppeType + " Equipped");
 
-        SFXManager.Instance.PlayEquip();
+other.gameObject.SetActive(false);
 
-        other.gameObject.SetActive(false);
+if (PPEManager.Instance.IsFullyEquipped())
+{
+    Debug.Log("All PPE Equipped!");
 
-        if (PPEManager.Instance.IsFullyEquipped())
-        {
-            Debug.Log("All PPE Equipped!");
+    if (trainingManager != null)
+        trainingManager.PPECompleted();
 
-            if (trainingManager != null)
-                trainingManager.TrainingCompleted();
         }
     }
 }

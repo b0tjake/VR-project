@@ -13,6 +13,11 @@ public class PPEManager : MonoBehaviour
     public bool RShoe;
     public bool WeldingMask;
 
+        public bool ringRemoved;
+        public bool watchRemoved;
+        public bool braceletRemoved;
+        public bool necklaceRemoved;
+
     private void Awake()
     {
         if (Instance == null)
@@ -31,4 +36,18 @@ public class PPEManager : MonoBehaviour
                RShoe &&
                WeldingMask;
     }
+
+    public void CheckJewelry()
+    {
+        if (ringRemoved &&
+            watchRemoved &&
+            braceletRemoved &&
+            necklaceRemoved)
+        {
+            Debug.Log("Jewelry removed!");
+
+            // Tick the checklist
+        }
+    }
+
 }
