@@ -17,6 +17,8 @@ public class TrainingManager : MonoBehaviour
     [Header("Scene 2 - PPE")]
     public TaskCanvasManager taskCanvas;
     public GameObject weldingArea;
+    public GameObject bracelet;
+    public GameObject ring;
 
     //======================================================
     // SAFE WALKWAY
@@ -75,8 +77,10 @@ public void PPECompleted()
 
     taskCanvas.PPEFinished();
 
-    if (weldingArea != null)
+    if (weldingArea != null && ring != null && bracelet != null)
         weldingArea.SetActive(true);
+        ring.SetActive(true);
+        bracelet.SetActive(true);
 }
 
     //======================================================
