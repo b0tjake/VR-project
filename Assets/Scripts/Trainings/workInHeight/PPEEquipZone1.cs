@@ -1,71 +1,73 @@
 using UnityEngine;
 
-public class PPEEquipZone : MonoBehaviour
+public class PPEEquipZone1 : MonoBehaviour
 {
     public PPEUIManager uiManager;
 
-
+    public GameObject bodyHook;
 
     public TrainingManager trainingManager;
 
     private void OnTriggerEnter(Collider other)
     {
-        PPEItem item = other.GetComponent<PPEItem>();
+        PPEItem1 item = other.GetComponent<PPEItem1>();
 
         if (item == null)
             return;
 
         switch (item.ppeType)
         {
-            case PPEItem.PPEType.Helmet:
-                if (PPEManager.Instance.Helmet)
+            case PPEItem1.PPEType.Helmet:
+                if (HeightPPEManager.Instance.Helmet)
                     return;
-                PPEManager.Instance.Helmet = true;
+                HeightPPEManager.Instance.Helmet = true;
                 if (uiManager != null) uiManager.EquipHelmet();
                 break;
 
-            case PPEItem.PPEType.Vest:
-                if (PPEManager.Instance.Vest)
+            case PPEItem1.PPEType.Vest:
+                if (HeightPPEManager.Instance.Vest)
                     return;
-                PPEManager.Instance.Vest = true;
+                HeightPPEManager.Instance.Vest = true;
                 if (uiManager != null) uiManager.EquipVest();
                 break;
 
-            case PPEItem.PPEType.LGlove:
-                if (PPEManager.Instance.LGlove)
+            case PPEItem1.PPEType.LGlove:
+                if (HeightPPEManager.Instance.LGlove)
                     return;
-                PPEManager.Instance.LGlove = true;
+                HeightPPEManager.Instance.LGlove = true;
                 if (uiManager != null) uiManager.EquipLeftGlove();
                 break;
 
             // Added missing RGlove case
-            case PPEItem.PPEType.RGlove:
-                if (PPEManager.Instance.RGlove)
+            case PPEItem1.PPEType.RGlove:
+                if (HeightPPEManager.Instance.RGlove)
                     return;
-                PPEManager.Instance.RGlove = true;
+                HeightPPEManager.Instance.RGlove = true;
                 if (uiManager != null) uiManager.EquipRightGlove();
                 break;
 
-            case PPEItem.PPEType.LShoe:
-                if (PPEManager.Instance.LShoe)
+            case PPEItem1.PPEType.LShoe:
+                if (HeightPPEManager.Instance.LShoe)
                     return;
-                PPEManager.Instance.LShoe = true;
+                HeightPPEManager.Instance.LShoe = true;
                 if (uiManager != null) uiManager.EquipLeftShoe();
                 break;
 
             // Added missing RShoe case
-            case PPEItem.PPEType.RShoe:
-                if (PPEManager.Instance.RShoe)
+            case PPEItem1.PPEType.RShoe:
+                if (HeightPPEManager.Instance.RShoe)
                     return;
-                PPEManager.Instance.RShoe = true;
+                HeightPPEManager.Instance.RShoe = true;
                 if (uiManager != null) uiManager.EquipRightShoe();
                 break;
 
-            case PPEItem.PPEType.WeldingMask:
-                if (PPEManager.Instance.WeldingMask)
+            case PPEItem1.PPEType.Harness:
+                if (HeightPPEManager.Instance.Harness)
                     return;
-                PPEManager.Instance.WeldingMask = true;
+                HeightPPEManager.Instance.Harness = true;
                 if (uiManager != null) uiManager.EquipWeldingMask();
+                if (bodyHook != null)
+                    bodyHook.SetActive(true);
                 break;
         }
 
