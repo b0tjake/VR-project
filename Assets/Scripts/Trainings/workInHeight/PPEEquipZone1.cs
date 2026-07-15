@@ -75,7 +75,7 @@ Debug.Log(item.ppeType + " Equipped");
 
 other.gameObject.SetActive(false);
 
-if (PPEManager.Instance.IsFullyEquipped())
+if (HeightPPEManager.Instance.IsFullyEquipped())
 {
     Debug.Log("All PPE Equipped!");
 
