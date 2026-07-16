@@ -42,4 +42,9 @@ public class SafeZone : MonoBehaviour
         Debug.Log("EXIT : " + other.name +
                   " | Zones = " + safeZoneCount);
     }
+
+    public static void ResetCounter()
+    {
+        safeZoneCount = 0;
+    }
 }

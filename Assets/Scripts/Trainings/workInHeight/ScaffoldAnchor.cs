@@ -11,12 +11,14 @@ public class ScaffoldAnchor : MonoBehaviour
         if (hook == null)
             return;
 
+        if (!hook.isHeld)
+            return;
+
         if (hook.attached)
             return;
 
         hook.AttachTo(transform);
 
-        if (trainingManager != null)
-            trainingManager.TrainingCompleted(); // we'll replace this later if needed
+        trainingManager.TrainingCompleted();
     }
 }

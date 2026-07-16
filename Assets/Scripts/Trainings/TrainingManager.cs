@@ -41,6 +41,9 @@ public class TrainingManager : MonoBehaviour
         if (teleportProvider != null)
             teleportProvider.enabled = true;
 
+        SafeZone.ResetCounter();
+
+
     }
 
     public void LeftSafeZone()

@@ -3020,6 +3020,28 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1767040206}
   m_SourcePrefab: {fileID: 100100000, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+--- !u!114 &736383930 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8053059486601427065, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+  m_PrefabInstance: {fileID: 736383929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1e8c997df241c1a67045eeac79b41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &736383931 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8476853769231596631, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+  m_PrefabInstance: {fileID: 736383929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &752282014
 GameObject:
   m_ObjectHideFlags: 0
@@ -3052,6 +3074,13 @@ MonoBehaviour:
   ui: {fileID: 2132830791}
   completedPanel: {fileID: 2133113957}
   diactivateWhenWin: {fileID: 1213789806}
+  taskCanvas: {fileID: 0}
+  weldingArea: {fileID: 0}
+  bracelet: {fileID: 0}
+  ring: {fileID: 0}
+  moveProvider: {fileID: 736383930}
+  teleportProvider: {fileID: 736383931}
+  snapTurnProvider: {fileID: 0}
 --- !u!4 &752282016
 Transform:
   m_ObjectHideFlags: 0
@@ -7370,7 +7399,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1443580162}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 212085736}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: LoadWorkingAtHeight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1443580162
 MonoBehaviour:
   m_ObjectHideFlags: 0

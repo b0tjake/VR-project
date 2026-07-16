@@ -5927,7 +5927,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 386385611}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 709388802}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: LoadPPESelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &386385611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20946,6 +20958,9 @@ MonoBehaviour:
   weldingArea: {fileID: 892627157}
   bracelet: {fileID: 919132149070711284}
   ring: {fileID: 345761580}
+  moveProvider: {fileID: 0}
+  teleportProvider: {fileID: 0}
+  snapTurnProvider: {fileID: 0}
 --- !u!4 &1162677600
 Transform:
   m_ObjectHideFlags: 0
