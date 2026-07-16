@@ -18,9 +18,9 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("PPESelection");
     }
 
-    public void LoadWasteManagement()
+    public void LoadWetFloor()
     {
-        SceneManager.LoadScene("WasteManagement");
+        SceneManager.LoadScene("wetFloor");
     }
 
     public void LoadForkliftTraining()
