@@ -329,8 +329,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190316
+  m_fontColor: {r: 0.9245283, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -431,9 +431,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrainingUIManager
   warningPanel: {fileID: 122660575}
   restartPanel: {fileID: 1725555429}
+  emergencyPanel: {fileID: 0}
   statusText: {fileID: 1946132651}
   warningDescription: {fileID: 1006018037}
   restartReason: {fileID: 1064069320}
+  alarmSound: {fileID: 0}
 --- !u!4 &42722342
 Transform:
   m_ObjectHideFlags: 0
@@ -13471,7 +13473,7 @@ GameObject:
   - component: {fileID: 823670579}
   - component: {fileID: 823670578}
   m_Layer: 5
-  m_Name: Waste Management
+  m_Name: wet floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13540,7 +13542,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 823670579}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 709388802}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: LoadWetFloor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &823670579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20961,6 +20975,11 @@ MonoBehaviour:
   moveProvider: {fileID: 0}
   teleportProvider: {fileID: 0}
   snapTurnProvider: {fileID: 0}
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  mopGrab: {fileID: 0}
+  signsPlaced: 0
+  requiredSigns: 2
 --- !u!4 &1162677600
 Transform:
   m_ObjectHideFlags: 0
@@ -29852,7 +29871,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Waste Management
+  m_text: Wet floor
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -30622,8 +30641,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278247998
+  m_fontColor: {r: 0.24409445, g: 0.8867924, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

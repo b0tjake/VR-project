@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _diffuse:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: bbb128b8f2ab8ab4a826e09ed33c9d8c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _normal:
@@ -72,9 +72,9 @@ Material:
     - _flow: 0.02
     - _flowTaillin: 10
     m_Colors:
-    - _main_tilling: {r: 0, g: 0, b: 0, a: 0}
+    - _main_tilling: {r: -0.11, g: -0.11, b: 0, a: 0}
     - _ripper_tilling: {r: 3.72, g: 2.72, b: 0, a: 0}
     - _rippleSpeed: {r: 0.44, g: 0, b: 0, a: 0}
-    - _smoothTilling: {r: 2.73, g: 0.84, b: 0, a: 0}
+    - _smoothTilling: {r: -1.69, g: 1.61, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

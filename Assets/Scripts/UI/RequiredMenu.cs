@@ -45,7 +45,8 @@ public class RequiredMenu : MonoBehaviour
         {
             OpenCanvas();
 
-            taskCanvas.ToggleCurrentTask();
+            if (taskCanvas != null)
+                taskCanvas.ToggleCurrentTask();
         }
     }
 

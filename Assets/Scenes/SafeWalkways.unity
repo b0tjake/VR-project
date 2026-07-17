@@ -1929,7 +1929,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Waste Management
+  m_text: Wet floor
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3081,6 +3081,11 @@ MonoBehaviour:
   moveProvider: {fileID: 736383930}
   teleportProvider: {fileID: 736383931}
   snapTurnProvider: {fileID: 0}
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  mopGrab: {fileID: 0}
+  signsPlaced: 0
+  requiredSigns: 2
 --- !u!4 &752282016
 Transform:
   m_ObjectHideFlags: 0
@@ -9142,7 +9147,7 @@ GameObject:
   - component: {fileID: 1797387402}
   - component: {fileID: 1797387401}
   m_Layer: 5
-  m_Name: Waste Management
+  m_Name: Wet floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9211,7 +9216,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1797387402}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 212085736}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: LoadWetFloor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1797387402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11079,9 +11096,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrainingUIManager
   warningPanel: {fileID: 332640514}
   restartPanel: {fileID: 1579838000}
+  emergencyPanel: {fileID: 0}
   statusText: {fileID: 110709787}
   warningDescription: {fileID: 1726465301}
   restartReason: {fileID: 1811564946}
+  alarmSound: {fileID: 0}
 --- !u!4 &2132830792
 Transform:
   m_ObjectHideFlags: 0

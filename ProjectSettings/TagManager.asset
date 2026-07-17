@@ -8,6 +8,8 @@ TagManager:
   - Crowbar
   - Hammer
   - Jewelry
+  - WetFloorSign
+  - Mop
   layers:
   - Default
   - TransparentFX

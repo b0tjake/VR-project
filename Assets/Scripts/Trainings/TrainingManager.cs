@@ -5,6 +5,9 @@ using UnityEngine.XR.Interaction.Toolkit.Locomotion;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using TMPro;
+
 
 public class TrainingManager : MonoBehaviour
 {
@@ -29,10 +32,18 @@ public class TrainingManager : MonoBehaviour
     public TeleportationProvider teleportProvider;
     public SnapTurnProvider snapTurnProvider;
 
+    [Header("Wet Floor")]
+
+    public TMP_Text titleText;
+    public TMP_Text descriptionText;
+    public XRGrabInteractable mopGrab;
+    public int signsPlaced = 0;
+    public int requiredSigns = 2;
+
     //======================================================
     // SAFE WALKWAY
     //======================================================
-    
+
     private void Start()
     {
         if (moveProvider != null)
@@ -40,9 +51,12 @@ public class TrainingManager : MonoBehaviour
 
         if (teleportProvider != null)
             teleportProvider.enabled = true;
+        if (mopGrab != null)
+            mopGrab.enabled = false;
 
         SafeZone.ResetCounter();
 
+        ui.ShowEmergencyUI();
 
     }
 
@@ -128,4 +142,30 @@ public class TrainingManager : MonoBehaviour
         if (completedPanel != null)
             completedPanel.SetActive(true);
     }
+
+    public void SignPlaced()
+    {
+        signsPlaced++;
+
+        if (signsPlaced < requiredSigns)
+            return;
+
+
+        titleText.text = "CLEAN THE SPILL";
+
+        descriptionText.text =
+            "Retrieve the mop.\n\nClean the spill until the area is safe.";
+
+        if (mopGrab != null)
+            mopGrab.enabled = true;
+
+        ui.ShowEmergencyUI();
+    }
+    public void SpillCleaned()
+    {
+
+        TrainingCompleted();
+    }
+
+
 }

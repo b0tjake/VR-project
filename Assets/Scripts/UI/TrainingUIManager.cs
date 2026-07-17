@@ -6,6 +6,7 @@ public class TrainingUIManager : MonoBehaviour
     [Header("Panels")]
     public GameObject warningPanel;
     public GameObject restartPanel;
+    public GameObject emergencyPanel;
 
     [Header("Safety")]
     public TMP_Text statusText;
@@ -16,15 +17,57 @@ public class TrainingUIManager : MonoBehaviour
     [Header("Restart")]
     public TMP_Text restartReason;
 
+
+
+
+    public AudioSource alarmSound;
+
+    //==================================================
+    // SAFETY
+    //==================================================
+
     public void SetSafe()
     {
-        statusText.text = "<color=green> 🟢 SAFE</color>";
+        statusText.text = "<color=green>🟢 SAFE</color>";
     }
 
     public void SetUnsafe()
     {
         statusText.text = "<color=red>🔴 UNSAFE</color>";
     }
+
+    //==================================================
+    // EMERGENCY
+    //==================================================
+
+    public void ShowEmergencyUI()
+    {
+        CancelInvoke(nameof(HideEmergencyUI));
+
+        Transform cam = Camera.main.transform;
+
+        emergencyPanel.transform.position =
+            cam.position + cam.forward * 2f;
+
+        emergencyPanel.transform.forward = cam.forward;
+
+        emergencyPanel.SetActive(true);
+
+        if (alarmSound != null)
+            alarmSound.Play();
+
+        Invoke(nameof(HideEmergencyUI), 5f);
+    }
+    public void HideEmergencyUI()
+    {
+        emergencyPanel.SetActive(false);
+
+        if (alarmSound != null)
+            alarmSound.Stop();
+    }
+    //==================================================
+    // WARNING
+    //==================================================
 
     public void ShowWarning(string message)
     {
@@ -36,6 +79,10 @@ public class TrainingUIManager : MonoBehaviour
     {
         warningPanel.SetActive(false);
     }
+
+    //==================================================
+    // RESTART
+    //==================================================
 
     public void ShowRestart(string reason)
     {
