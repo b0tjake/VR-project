@@ -10298,7 +10298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Waste Management
+  m_text: Wet Floor
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10928,9 +10928,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrainingUIManager
   warningPanel: {fileID: 689685715}
   restartPanel: {fileID: 201431336}
+  emergencyPanel: {fileID: 0}
   statusText: {fileID: 2020156531}
   warningDescription: {fileID: 1267306449}
   restartReason: {fileID: 22851283}
+  alarmSound: {fileID: 0}
 --- !u!4 &782100494
 Transform:
   m_ObjectHideFlags: 0
@@ -12749,6 +12751,11 @@ MonoBehaviour:
   moveProvider: {fileID: 1882454587}
   teleportProvider: {fileID: 297587123}
   snapTurnProvider: {fileID: 0}
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  mopGrab: {fileID: 0}
+  signsPlaced: 0
+  requiredSigns: 2
 --- !u!4 &922541293
 Transform:
   m_ObjectHideFlags: 0
@@ -18863,7 +18870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8053059486601427065, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_MoveSpeed
-      value: 10.35
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545877, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_Name
@@ -18875,7 +18882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.185
+      value: 13.29
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18883,7 +18890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 40.816
+      value: -10.38
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalRotation.w
@@ -29748,7 +29755,7 @@ GameObject:
   - component: {fileID: 1993651788}
   - component: {fileID: 1993651787}
   m_Layer: 5
-  m_Name: Waste Management
+  m_Name: 'wet floor '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29817,7 +29824,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1993651788}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 498268780}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: LoadWetFloor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1993651788
 MonoBehaviour:
   m_ObjectHideFlags: 0
