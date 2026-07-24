@@ -3426,6 +3426,84 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "XRI Right Spray",
+            "id": "efec8722-c63d-4e25-9a7d-4409871d8037",
+            "actions": [
+                {
+                    "name": "Spray",
+                    "type": "Button",
+                    "id": "55f59f57-ca3a-45d8-911b-c87b1061a96b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "33d5eb79-6bca-4f10-809c-1e1a55b63b7d",
+                    "path": "<XRSimulatedController>{RightHand}/triggerButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spray",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9c1c4a8b-2f3e-4d3a-9b53-6f9d0b9a1f21",
+                    "path": "<XRController>{RightHand}/{TriggerButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spray",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "XRI Left Spray",
+            "id": "46557e94-c1ee-434e-996f-aa9c0b82c478",
+            "actions": [
+                {
+                    "name": "Spray",
+                    "type": "Button",
+                    "id": "0f0c3203-afa6-4731-8b08-9d25296ea2d8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ed81ddd4-0c63-4618-b00b-e80dab86c315",
+                    "path": "<XRSimulatedController>{LeftHand}/triggerButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spray",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7a5e9f34-1b6c-4a7d-8e2f-3c5d9b0a4e6f",
+                    "path": "<XRController>{LeftHand}/{TriggerButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spray",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
