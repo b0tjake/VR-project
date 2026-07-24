@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class JewelrySwap : MonoBehaviour
 {
@@ -16,14 +17,21 @@ public class JewelrySwap : MonoBehaviour
 
     private void OnGrabbed(SelectEnterEventArgs args)
     {
-        // Show the pickup
+        IXRSelectInteractor interactor = args.interactorObject;
+        XRInteractionManager interactionManager = grab.interactionManager;
+        XRGrabInteractable pickupGrab = pickupObject.GetComponent<XRGrabInteractable>();
+
+        // Show the pickup and put it where the visual ring/bracelet was
         pickupObject.SetActive(true);
+        pickupObject.transform.SetPositionAndRotation(transform.position, transform.rotation);
 
-        // Put it where the visual ring was
-        pickupObject.transform.position = transform.position;
-        pickupObject.transform.rotation = transform.rotation;
+        // Hand off the current selection from the visual to the real pickup so it
+        // actually follows the hand instead of just being teleported and dropped.
+        interactionManager.SelectExit(interactor, grab);
 
-        // Hide the visual ring
+        // Hide the visual ring/bracelet
         gameObject.SetActive(false);
+
+        interactionManager.SelectEnter(interactor, pickupGrab);
     }
 }

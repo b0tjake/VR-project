@@ -1437,6 +1437,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!143 &136752796 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 4295892835532738850, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+  m_PrefabInstance: {fileID: 136752791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &137881274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5327,6 +5332,7 @@ GameObject:
   - component: {fileID: 345761590}
   - component: {fileID: 345761589}
   - component: {fileID: 345761592}
+  - component: {fileID: 345761593}
   m_Layer: 0
   m_Name: 'Ring_Visual '
   m_TagString: Jewelry
@@ -5641,6 +5647,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JewelrySwap
   pickupObject: {fileID: 1077581227}
+--- !u!114 &345761593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345761580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b967d33af427f48458906fcb4cb19724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IgnorePlayerCollisionOnGrab
+  playerCollider: {fileID: 136752796}
 --- !u!1 &348077574
 GameObject:
   m_ObjectHideFlags: 0
@@ -6312,6 +6331,7 @@ GameObject:
   - component: {fileID: 410900741}
   - component: {fileID: 410900740}
   - component: {fileID: 410900739}
+  - component: {fileID: 410900744}
   m_Layer: 0
   m_Name: Bracelet_Pickup
   m_TagString: Jewelry
@@ -6568,6 +6588,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410900736}
   m_Mesh: {fileID: -5521781026172139625, guid: a2d4f7f79da2fb4449ebb1e9e04d81d7, type: 3}
+--- !u!114 &410900744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410900736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b967d33af427f48458906fcb4cb19724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IgnorePlayerCollisionOnGrab
+  playerCollider: {fileID: 136752796}
 --- !u!1 &412669027
 GameObject:
   m_ObjectHideFlags: 0
@@ -14057,7 +14090,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 840804385}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 709388802}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: LoadFireEmergency
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &840804385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19222,6 +19267,7 @@ GameObject:
   - component: {fileID: 1077581232}
   - component: {fileID: 1077581231}
   - component: {fileID: 1077581230}
+  - component: {fileID: 1077581237}
   m_Layer: 0
   m_Name: Ring_Pickup
   m_TagString: Jewelry
@@ -19523,6 +19569,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077581227}
   m_Mesh: {fileID: 4787136918717088048, guid: 40779fcd4bf83dd41b77afe9d40c9a93, type: 3}
+--- !u!114 &1077581237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077581227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b967d33af427f48458906fcb4cb19724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IgnorePlayerCollisionOnGrab
+  playerCollider: {fileID: 136752796}
 --- !u!1 &1077906791
 GameObject:
   m_ObjectHideFlags: 0
@@ -33781,6 +33840,7 @@ GameObject:
   - component: {fileID: 990737582}
   - component: {fileID: 990737581}
   - component: {fileID: 3469287836593626348}
+  - component: {fileID: 3469287836593626349}
   m_Layer: 0
   m_Name: Bracelet_Visual
   m_TagString: Jewelry
@@ -34171,6 +34231,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JewelrySwap
   pickupObject: {fileID: 410900736}
+--- !u!114 &3469287836593626349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149070711284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b967d33af427f48458906fcb4cb19724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IgnorePlayerCollisionOnGrab
+  playerCollider: {fileID: 136752796}
 --- !u!1 &3970757976768948944
 GameObject:
   m_ObjectHideFlags: 0

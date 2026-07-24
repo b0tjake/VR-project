@@ -4268,6 +4268,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 7b3373950dc50ee4b94e5731f725de85, type: 3}
       insertIndex: -1
       addedObject: {fileID: 991104476}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 7b3373950dc50ee4b94e5731f725de85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 991104479}
   m_SourcePrefab: {fileID: 100100000, guid: 7b3373950dc50ee4b94e5731f725de85, type: 3}
 --- !u!1 &991104472 stripped
 GameObject:
@@ -4457,6 +4460,19 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &991104479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991104472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b967d33af427f48458906fcb4cb19724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IgnorePlayerCollisionOnGrab
+  playerCollider: {fileID: 1767040212}
 --- !u!1 &1007669864
 GameObject:
   m_ObjectHideFlags: 0
@@ -6712,6 +6728,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2357436903305049496, guid: 6adb95cd717da66468d2f86128ac1ea6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1265448845}
+    - targetCorrespondingSourceObject: {fileID: 2357436903305049496, guid: 6adb95cd717da66468d2f86128ac1ea6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1265448850}
   m_SourcePrefab: {fileID: 100100000, guid: 6adb95cd717da66468d2f86128ac1ea6, type: 3}
 --- !u!1 &1265448843 stripped
 GameObject:
@@ -6901,6 +6920,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8918077550557095614, guid: f9a120516bbde984aa9ffd160ced2bd4, type: 3}
+--- !u!114 &1265448850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265448843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b967d33af427f48458906fcb4cb19724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IgnorePlayerCollisionOnGrab
+  playerCollider: {fileID: 1767040212}
 --- !u!1 &1279431811 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5884337902830827329, guid: 3aec09ea8589f7441be0774c2dd2c12b, type: 3}
@@ -8926,7 +8958,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1717956579}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 212085736}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: LoadFireEmergency
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1717956579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9134,6 +9178,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!143 &1767040212 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 4295892835532738850, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+  m_PrefabInstance: {fileID: 736383929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1797387399
 GameObject:
   m_ObjectHideFlags: 0
