@@ -203,6 +203,21 @@ public class FireExtinguisher : MonoBehaviour
         target.smokeCoroutine = null;
     }
 
+    // Returns true once every fire target has been extinguished. Used by other systems (e.g. the fire alarm) to gate on fire being fully out.
+    public bool AreAllFiresExtinguished()
+    {
+        if (fireTargets == null || fireTargets.Count == 0)
+            return false;
+
+        foreach (FireTarget target in fireTargets)
+        {
+            if (!target.isExtinguished)
+                return false;
+        }
+
+        return true;
+    }
+
     private static void SetGameObjectsActive(GameObject[] gameObjects, bool active)
     {
         if (gameObjects == null)
